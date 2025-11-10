@@ -1,12 +1,39 @@
 import Todo from "./Todo";
 
 const TodoList = () => {
+    const data = [
+        {
+            id : 0,
+            text : "belajar javascript",
+            isCompleted : true
+        },
+        {
+            id : 1,
+            text : "belajar node.js",
+            isCompleted : true
+        },
+        {
+            id : 2,
+            text : "belajar mongodb",
+            isCompleted : true
+        },
+        {
+            id : 3,
+            text : "belajar react",
+            isCompleted : false
+        },
+        {
+            id : 4,
+            text : "belajar react",
+            isCompleted : false
+        },
+    ]
+
     return (
         <ul>
-            <Todo isCompleted={true} text={"belajar javascrpt"} isDeleted={true} />
-            <Todo isCompleted={true} text={"belajar node js"} />
-            <Todo isCompleted={true} text={"belajar mongodb"} />
-            <Todo isCompleted={false} text={"belajar React"} />
+            {data.map((todo) => {
+                return <Todo key={todo.id} {...todo} />
+            })}
         </ul>
     )
 }
